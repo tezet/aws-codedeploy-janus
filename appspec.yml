@@ -8,6 +8,7 @@ hooks:
     - location: scripts/install_janus.sh
       timeout: 60000
       runas: root
+  AfterInstall:
     - location: scripts/janus.transport.websockets.cfg.sh
       timeout: 300
       runas: root
@@ -17,6 +18,7 @@ hooks:
     - location: scripts/generate_certificate.sh
       timeout: 20000
       runas: root
+  ApplicationStart:
     - location: scripts/start_janus.sh
       timeout: 300
       runas: root
