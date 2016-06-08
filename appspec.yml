@@ -1,0 +1,26 @@
+version: 0.0
+os: linux
+files:
+  - source: /files/janus.cfg.sh
+    destination: /usr/share/janus/scripts/janus.cfg.sh
+hooks:
+  BeforeInstall:
+    - location: scripts/install_janus.sh
+      timeout: 60000
+      runas: root
+    - location: scripts/generate_certificate.sh
+      timeout: 20000
+      runas: root
+    - location: scripts/janus.transport.websockets.cfg.sh
+      timeout: 300
+      runas: root
+    - location: scripts/janus.transport.http.cfg.sh
+      timeout: 300
+      runas: root
+    - location: scripts/start_janus.sh
+      timeout: 300
+      runas: root
+  ApplicationStop:
+    - location: scripts/stop_janus.sh
+      timeout: 300
+      runas: root
