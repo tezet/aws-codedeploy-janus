@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /files/janus.cfg.sh
-    destination: /usr/share/janus/scripts/janus.cfg.sh
+    destination: /usr/share/janus/scripts/
 hooks:
   BeforeInstall:
     - location: scripts/install_janus.sh
