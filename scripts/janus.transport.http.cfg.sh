@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+PREFIX=/usr
+
 cat << EOF > $PREFIX/etc/janus/janus.transport.http.cfg
 ; Web server stuff: whether any should be enabled, which ports they
 ; should use, whether security should be handled directly or demanded to

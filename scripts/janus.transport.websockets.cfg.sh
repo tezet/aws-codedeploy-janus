@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+PREFIX=/usr
+
 cat << EOF > $PREFIX/etc/janus/janus.transport.websockets.cfg
 ; WebSockets stuff: whether they should be enabled, which ports they
 ; should use, and so on.
