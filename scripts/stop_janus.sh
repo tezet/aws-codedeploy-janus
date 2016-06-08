@@ -4,6 +4,10 @@ PREFIX=/usr
 
 #!/bin/bash
 app_pid=`pgrep janus`
-if [[ -n  $app_pid ]]; then
+echo "Stopping Janus daemon"
+while [[ -n  $(pgrep janus) ]]; do
+    echo -ne "."
     kill $app_pid
-fi
+    sleep 1
+done
+echo "done"
