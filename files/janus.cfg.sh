@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+PREFIX=/usr
+
 get_nat_mapping_entry ()
 {
 	PUBLIC_IP=$(curl http://169.254.169.254/latest/meta-data/public-ipv4)
