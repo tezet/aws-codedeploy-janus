@@ -3,4 +3,4 @@
 PREFIX=/usr
 
 $PREFIX/share/janus/scripts/janus.cfg.sh
-$PREFIX/bin/janus
+$PREFIX/bin/janus -b
