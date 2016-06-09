@@ -8,10 +8,10 @@ hooks:
     - location: scripts/install_janus.sh
       timeout: 300000
       runas: root
+  AfterInstall:
     - location: scripts/set_permissions.sh
       timeout: 300
       runas: root
-  AfterInstall:
     - location: scripts/janus.transport.websockets.cfg.sh
       timeout: 300
       runas: ubuntu
