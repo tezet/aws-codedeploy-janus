@@ -2,11 +2,18 @@
 
 PREFIX=/usr
 LOG_FILE=/var/log/janus.log
-JANUS_USER=ubuntu
-JANUS_GROUP=ubuntu
+JANUS_USER=janus
+JANUS_GROUP=janus
 CONFIG_DIR=$PREFIX/etc/janus
 SHARE_DIR=$PREFIX/share/janus
 
+# Create user if does not exist
+if ! id -u $JANUS_USER > /dev/null 2>&1; then
+    echo "Creating user" $JANUS_USER
+    useradd -r $JANUS_USER
+fi
+
+echo "Changing permissions"
 if [ ! -d $CONFIG_DIR ]; then
   mkdir -p $CONFIG_DIR
 fi

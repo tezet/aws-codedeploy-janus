@@ -14,22 +14,22 @@ hooks:
       runas: root
     - location: scripts/janus.transport.websockets.cfg.sh
       timeout: 300
-      runas: ubuntu
+      runas: janus
     - location: scripts/janus.transport.http.cfg.sh
       timeout: 300
-      runas: ubuntu
+      runas: janus
     - location: scripts/generate_certificate.sh
       timeout: 20000
-      runas: ubuntu
+      runas: janus
   ApplicationStart:
     - location: scripts/start_janus.sh
       timeout: 300
-      runas: ubuntu
+      runas: janus
   ApplicationStop:
     - location: scripts/stop_janus.sh
       timeout: 300
-      runas: ubuntu
+      runas: janus
   ValidateService:
     - location: scripts/validate_janus.sh
       timeout: 300
-      runas: ubuntu
+      runas: janus
